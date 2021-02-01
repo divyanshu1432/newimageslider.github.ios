@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <head>
+        <title>image slider</title>
+        <meta name="viewport" content="widt = device-width initial-scale = 1.0" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+            integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+            crossorigin="anonymous"
+        />
+        <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    </head>
+
+    <body>
+        <div class="container w-75 h-75">
+            <div class="second_class d-flex justify-content-around align-items-end mt-5">
+                <input type="button" class="btn btn-primary" value="previous" name="" id="pre" />
+                <img src="image1.jpg" height="250px" width="250px" id="change_image" />
+                <input type="button" class="btn btn-primary" value="Next" name="" id="next" />
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            let image = ["image2", "image3", "image4", "image5", "image6", "image7", "image8", "image9", "image10"];
+            let new_image = 0;
+
+          
+            let next = document.getElementById("next");
+            next.addEventListener("click", function () {
+                let next_image = document.getElementById("change_image");
+                let n_image = image[new_image++];
+                //console.log(n_image)
+                next_image.src = n_image + ".jpg";
+                if (n_image == undefined) {
+                    next_image.src = image[0] + ".jpg";
+                }
+            });
+
+            let old_image = image.length;
+            let prev = document.getElementById("pre");
+
+            prev.addEventListener("click", function () {
+                let next_image = document.getElementById("change_image");
+                let o_image = image[old_image--];
+                //console.log(o_image)
+                next_image.src = o_image + ".jpg";
+                if (o_image == undefined) {
+                    next_image.src = image[0] + ".jpg";
+                }
+            });
+        </script>
+    </body>
+</html>
