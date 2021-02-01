@@ -1,0 +1,1 @@
+# newimageslider.github.ios
